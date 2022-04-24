@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="www.http://thymeleaf.org">
+	<head>
+		<title>Blog Title</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<h3>Blog Post Form</h3>
+		<p>Thank you for your submission</p>
+		<p th:text="${title}"></p>
+		<p th:text="${author}"></p>
+		<p th:text="${blogEntry}"></p>
+		
+		<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	</body>
+</html>
