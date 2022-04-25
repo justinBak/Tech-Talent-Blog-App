@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="www.http://thymeleaf.org">
 	<head>
-		<title>Blog Submission</title>
+		<title>Blog Deletion</title>
 		<th:block th:replace="/fragments/head"/>
 	</head>
 	
@@ -12,11 +12,7 @@
 				<div class="col-md-12">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<h1 th:text="${blogPost.title}"></h1>
-						</div>
-						<div class="panel-body">
-							<strong><p th:text="${blogPost.author}"></p></strong>
-							<p th:text="${blogPost.blogEntry}"></p>
+							<h1>Post has been deleted</h1>
 						</div>
 						<div class="panel-footer">
 							<a th:href="@{/}">
@@ -24,12 +20,6 @@
 							</a>
 							<a th:href="@{/blogposts/new}">
 								<button class="btn btn-primary">Submit A New Blog Post</button>
-							</a>
-							<a th:href="@{/blogposts/{id}(id=${blogPost.id})}">
-								<button class="btn btn-light">Edit Post</button>
-							</a>
-							<a th:href="@{/blogposts/delete/{id}(id=${blogPost.id})}">
-								<button class="btn btn-danger">Delete Post</button>
 							</a>
 						</div>
 					</div>

@@ -7,9 +7,9 @@
 	<body>
 		<div th:replace="/fragments/navbar::navbarx"></div>
 		<div class="container">
-			<h1>Create a New Blog Post</h1>
+			<h1>Edit Blog Post</h1>
 			<!-- If you surround an URL with @{} in a thymeleaf expression, you let thymeleaf have a crack at URL rewriting -->
-			<form th:action="@{/blogposts}" th:object="${blogPost}" method="post">
+			<form th:action="@{/blogposts/update/{id}(id=${blogPost.id})}" th:object="${blogPost}" method="post">
 				<div class="form-group">
 					<input type="text" class="form-control" th:field="*{title}" placeholder="Blog Title..."/>
 				</div>
@@ -17,9 +17,12 @@
 					<input type="text" class="form-control" th:field="*{author}" placeholder="Your Name Here..."/>
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" th:field="*{blogEntry}" placeholder="Blog Entry"/>
+				<textarea class="form-control" th:field="*{blogEntry}" rows="4" cols="50" placeholder="Blog Entry">
+					Your text here
+				</textarea>
+					<!-- <input type="text" class="form-control" th:field="*{blogEntry}" placeholder="Blog Entry"/> -->
 				</div>
-				<button class="btn btn-primary">Submit Your Post</button>
+				<button class="btn btn-primary">Submit Your Edit</button>
 			</form>
 		</div>
 			

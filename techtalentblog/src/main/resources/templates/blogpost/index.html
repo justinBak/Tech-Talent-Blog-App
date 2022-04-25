@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<title>Blog Site</title>
-		<link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<th:block th:replace="/fragments/head"/>
 	</head>
 	<body>
+		<div th:replace="/fragments/navbar::navbarx"></div>
 		<div class="container">
 			<h1>Welcome to Our Blog Post Site!</h1>
 			<h3>Check out our blogs</h3>
@@ -25,16 +25,19 @@
 								<p th:text="${blog.blogEntry}"/>
 							</div>
 							<div class="panel-footer">
-							
-								
+							<a th:href="@{/blogposts/{id}(id=${blog.id})}">
+								<button class="btn btn-light">Edit Post</button>
+							</a>
+							<a th:href="@{/blogposts/delete/{id}(id=${blog.id})}">
+								<button class="btn btn-danger">Delete Post</button>
+							</a>
+							<!-- Link to Update -->
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+		<th:block th:replace="/fragments/endbody"/>
 	</body>
 </html>
